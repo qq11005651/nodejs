@@ -1,10 +1,10 @@
 # nodejs
-# 编译打包我们的运行环境
-$ sudo docker image build -t komavideo/mynode:v01 .
+编译打包我们的运行环境
+sudo docker image build -t komavideo/mynode:v01 .
 docker image build -t  qq11005651/nodejs/mynode:v01 .
-$ sudo docker image ls
-# 在环境中运行我们的应用
-$ sudo docker container run komavideo/mynode:v01
+sudo docker image ls
+在环境中运行我们的应用
+sudo docker container run komavideo/mynode:v01
 
 # Git提交
 $ git add .
