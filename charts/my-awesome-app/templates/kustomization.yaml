@@ -1,13 +1,11 @@
-# charts/my-awesome-app/templates/kustomization.yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-
-# 声明你的配置文件生成器
 configMapGenerator:
-- name: my-app-config-cm
+- name: app-json-config
   files:
   - app-config.json
-
-# 必须把需要引用该 ConfigMap 的资源也写在这里
 resources:
-- deployment.yaml 
+- deployment.yaml
+images:
+- name: my-awesome-app-image
+  newTag: v1.0.1

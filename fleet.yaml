@@ -1,13 +1,9 @@
-# /opt/nginx-fleet/fleet.yaml
 apiVersion: fleet.cattle.io/v1alpha1
 kind: Bundle
-
-# 1. 指定 Kustomize 配置文件所在的目录路径（相对于根目录）
 targetCustomizations:
-  - name: production-deploy
-    path: charts/my-awesome-app/templates/
-
-# 2. 定义该 Bundle 应该部署到哪些目标集群
-# 示例：部署到本地管理集群（与你之前查询的 fleet-local 对应）
+- name: prod
+  clusterSelector:
+    matchLabels:
+      env: prod
 targetClusters:
-  - clusterName: local 
+- clusterName: local
