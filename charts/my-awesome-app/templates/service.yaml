@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-nginx-svc
+  labels:
+    app: {{ .Release.Name }}-nginx
+spec:
+  # 流量路由到带有 app: {{ .Release.Name }}-nginx 标签的 Pod
+  selector:
+    app: {{ .Release.Name }}-nginx
+  ports:
+    - protocol: TCP
+      port: 80         # Service 暴露的端口
+      targetPort: 80   # Nginx 容器监听的端口
+  # 默认使用 ClusterIP。如果在生产集群需要外部负载均衡，可以在 values 或 fleet.yaml 中改为 LoadBalancer
+  type: {{ .Values.service.type | default "ClusterIP" }}
