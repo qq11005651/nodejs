@@ -1,0 +1,13 @@
+{
+  "name": "jenkins-node-test",
+  "version": "1.0.0",
+  "description": "Minimal test app for Jenkins pipeline",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "build": "echo \"Running build steps...\" && mkdir -p dist && echo 'Build Success' > dist/index.html"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
