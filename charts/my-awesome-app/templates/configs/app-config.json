@@ -1,0 +1,10 @@
+{
+    "appName": "MyAwesomeApp",
+    "version": "2.0.0",
+    "apiEndpoint": "https://production.internal",
+    "features": {
+        "enableBeta": true,
+        "theme": "dark"
+    },
+    "lastUpdated": "2026-06-13T18:00:00Z"
+}
